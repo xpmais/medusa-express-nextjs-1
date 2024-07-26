@@ -27,7 +27,7 @@ const Steps = ({ product, regions, country, region }) => {
         activeStep={activeStep}
         region={region}
       />
-      <Payment region={region} country={country} activeStep={activeStep} />
+      <Payment region={region} country={country} activeStep={activeStep} product={product}  />
     </Flex>
   )
 }

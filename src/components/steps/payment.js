@@ -25,7 +25,7 @@ const DeliveryReview = ({ delivery, displayCountry}) => (
   </Flex>
 )
 
-const Payment = ({ region, country, activeStep }) => {
+const Payment = ({ region, country, activeStep, product }) => {
   const [loading, setLoading] = useState(false)
   const router = useRouter()
   const { cart, pay, completeCheckout } = useCart()
@@ -46,7 +46,7 @@ const Payment = ({ region, country, activeStep }) => {
         region.countries.find(c => c.iso_2 === country).display_name
       )
     }
-  }, [country, region, activeStep, product])
+  }, [country, region, activeStep])
 
   return (
     <Flex variant="layout.stepContainer">
