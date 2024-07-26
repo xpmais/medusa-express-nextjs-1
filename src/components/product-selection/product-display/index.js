@@ -38,9 +38,7 @@ const ProductDisplay = ({ region, product }) => {
       <span className="product-title">
       {product.title} <b>{product.subtitle}</b>
 
-              <span className="badge">
-                New
-              </span>
+         
       </span>
       <span className="product-caption">
       {product.description}

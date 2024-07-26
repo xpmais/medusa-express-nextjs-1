@@ -61,11 +61,9 @@ const IndexPage = ({ product }) => {
       
     <div className="product-desc">
       <span className="product-title">
-      Elden Ring <b>Runes</b>
+      {product.title} <b>{product.subtitle}</b>
 
-              <span className="badge">
-                New
-              </span>
+        
       </span>
       <span className="product-caption">
       {product.description}
@@ -89,7 +87,7 @@ const IndexPage = ({ product }) => {
 
 
       <span className="product-price">
-      <div className="price-card price-card-new"><span>$</span> 1<span>.00</span></div>
+      <div className="price-card price-card-new"><span>$</span> 3<span>.00</span></div>
 
 
         </span>
