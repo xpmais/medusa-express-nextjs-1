@@ -12,33 +12,33 @@ const Review = ({ cart }) => {
         alignItems: "top",
       }}
     >
-      <Flex
+
+<Text
         sx={{
-          flex: 1,
-          flexDirection: "column",
-          fontWeight: "500",
-          fontSize: ".8em",
-          paddingLeft: "20px",
+          mt: "16px",
+          lineHeight: "24px",
+          fontSize: "14px",
+          fontWeight: 300,
+          color: "#6B7280",
         }}
+        variant="fz_s"
       >
-        <Text sx={{ fontWeight: 550, marginBottom: "10px" }}>{item.title}</Text>
-        <Flex
-          sx={{
-            width: "100%",
-            fontWeight: 300,
-            justifyContent: "space-between",
-          }}
-        >
-          <Text sx={{ marginBottom: "15px" }}>
-            <Text sx={{ color: "#B0B0B0" }}>Platform: </Text>
-            {item.variant.title}
-          </Text>
-        </Flex>
-        <Text sx={{ fontWeight: 300 }}>
-          <Text sx={{ color: "#B0B0B0" }}>Quantity: </Text>
-          {item.quantity}
-        </Text>
-      </Flex>
+    <div className="product-desc">
+      <span className="product-title">
+      {item.title} <b>{item.subtitle}</b>
+
+              <span className="badge">
+                New
+              </span>
+      </span>
+      <span className="product-caption">
+      {item.description}
+            </span>
+   
+      
+    </div>      </Text>
+
+      
     </Flex>
   )
 }
