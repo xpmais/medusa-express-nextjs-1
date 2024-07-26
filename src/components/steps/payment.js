@@ -79,10 +79,6 @@ const Payment = ({ region, country, activeStep }) => {
             <Text variant="header3">Payment</Text>
             <Box mt={"16px"}>
               <Review cart={cart} /> <Total cart={cart} />
-              <DeliveryReview
-                displayCountry={fullCountry}
-                delivery={cart.shipping_address}
-              />
               <Flex
                 sx={{
                   flexDirection: "column",
