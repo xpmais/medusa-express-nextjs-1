@@ -9,20 +9,17 @@ const ProductDisplay = ({ region, product }) => {
   return product ? (
     <Flex sx={{ flexDirection: "column" }}>
       <Flex sx={{ flexDirection: "row", width: "100%", height: "100%" }}>
-      <Image
+        <Image
           sx={{
-            width: "100%",
-            borderStartEndRadius: "10px",
-            borderStartStartRadius: "10px",
+            width: "50%",
+            borderRadius: "4px",
             objectFit: "contain",
             objectPosition: "center center",
-            clipPath: "polygon(0 0, 0 100%, 100% 75%, 100% 0%)",
-            boxShadow: "0px 0px 5px 2px rgba(0, 0, 0, 0.1)",
-
           }}
-          src={"/elden-ring.webp"}
+          src={product.thumbnail}
           alt={product.title}
         />
+        <Info product={product} region={region} />
       </Flex>
       <Text
         sx={{
