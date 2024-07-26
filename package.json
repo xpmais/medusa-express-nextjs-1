@@ -32,7 +32,9 @@
     "react-query": "^3.34.7",
     "sharp": "^0.29.3",
     "theme-ui": "^0.11.3",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "next-intercom": "^0.1.4"
+
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",

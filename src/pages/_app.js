@@ -6,6 +6,8 @@ import { ThemeProvider } from "theme-ui"
 import { ProductProvider } from "../context/product-context"
 import "../fonts/index.css"
 import theme from "../theme"
+import "../styles/globals.css"
+
 
 const BACKEND_URL =
   process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL || "http://localhost:9000"

@@ -6,18 +6,34 @@ import { Button, Card, Flex, Text } from "theme-ui"
 import CodeSnippet from "../components/code-snippet"
 import Layout from "../components/layout/layout"
 import { client } from "../utils/client"
+const { loadIntercom, initIntercomWindow } = require("next-intercom");
 
 const IndexPage = ({ product }) => {
   const router = useRouter()
 
+  const intercomID = 'zq6qqsdr'
+          loadIntercom({
+        
+        
+            appId: intercomID, // default : ''
+            email: "", //default: ''
+            name: "", //default: RandomName
+            ssr: false, // default: false
+            initWindow: true, // default: true
+            delay: 0, // default: 0  - usefull for mobile devices to prevent blocking the main thread
+          });
+
   return (
     <main>
       <Head>
-        <title>Medusa Express</title>
+        <title>xpmais.com</title>
         <meta name="description" content="One-page checkout" />
       </Head>
       <Layout>
         <Card variant="container">
+
+
+
           <Flex sx={{ flexDirection: "column" }}>
             <Text
               sx={{
@@ -30,128 +46,63 @@ const IndexPage = ({ product }) => {
                 borderBottom: "1px solid #E5E7EB",
               }}
             >
-              <Image src={"/medusa-svg.svg"} width={"200px"} height={"42px"} />
+              <Image src={"/logo.svg"} width={42} height={42} />
             </Text>
             <Text variant="heading3" sx={{ mb: "16px" }}>
               Welcome!
             </Text>
-            <Text variant="landingpageText">
-              Medusa Express is a drop-in storefront for your{" "}
-              <a href="https://github.com/medusajs/medusa" target={"_blank"}>
-                Medusa
-              </a>{" "}
-              store, that automatically creates pages for the products in your
-              catalog, each of them optimized to make the purchasing experience
-              as frictionless as possible, by bundling the checkout flow
-              alongside the product.
-            </Text>
-            <Button
-              variant="cta"
-              sx={{
-                my: "16px",
-              }}
-              onClick={() => router.push(`/${product.handle}`)}
-            >
-              Explore the demo
-            </Button>
-            <Text
-              as={"a"}
-              variant="landingpageLink"
-              sx={{
-                mb: "16px",
-              }}
-              target="_blank"
-              href="https://www.medusajs.com/post/introducing-medusa-express"
-            >
-              Read more
-            </Text>
-            <Flex
-              sx={{
-                borderTop: "1px solid #E5E7EB",
-                paddingTop: "8px",
-                flexDirection: "column",
-              }}
-            >
-              <Text
-                variant="landingpageText"
-                sx={{ my: "16px", color: "#111827", fontWeight: "600" }}
-              >
-                Get your own in only a couple of minutes
-              </Text>
-              <Text sx={{ mb: "24px" }}>
-                <CodeSnippet type={"cli"}>
-                  npx create-medusa-app@latest
-                </CodeSnippet>
-              </Text>
-            </Flex>
-            <Flex
-              sx={{
-                borderTop: "1px solid #E5E7EB",
-                paddingTop: "8px",
-                flexDirection: "column",
-              }}
-            >
-              <Text
-                variant="landingpageText"
-                sx={{ my: "8px", color: "#111827", fontWeight: "600" }}
-              >
-                Built with:
-              </Text>
-              <Text
-                as="a"
-                variant="landingpageLink"
-                href="https://medusajs.com"
-                target="_blank"
-              >
-                Medusa: Commerce engine
-              </Text>
-              <Text
-                target="_blank"
-                as="a"
-                variant="landingpageLink"
-                href="https://nextjs.org"
-              >
-                Next.js: React framework
-              </Text>
-              <Text
-                target="_blank"
-                as="a"
-                variant="landingpageLink"
-                href="https://stripe.com"
-              >
-                Stripe: Payment provider
-              </Text>
-              <Text
-                as="a"
-                variant="landingpageLink"
-                target="_blank"
-                href="https://github.com/medusajs/medusa/tree/master/packages/medusa-react"
-              >
-                Medusa React: Hooks for Medusa
-              </Text>
-            </Flex>
-            <Flex sx={{ width: "100%", justifyContent: "center", mt: [3] }}>
-              <Flex
-                as="a"
-                href="https://github.com/medusajs/medusa-express-nextjs"
-                target="_blank"
-                rel="noreferrer"
-                mx={2}
-              >
-                <Image src={"/github.png"} width={"15px"} height={"15px"} />
-              </Flex>
-              <Flex
-                as="a"
-                href="https://discord.gg/medusajs"
-                target="_blank"
-                mx={2}
-              >
-                <Image src={"/discord.png"} width={"15px"} height={"15px"} />
-              </Flex>
-              <Flex as="a" href="https://medusajs.com" target="_blank" mx={2}>
-                <Image src={"/mark.png"} height={"15px"} width={"15px"} />
-              </Flex>
-            </Flex>
+            
+            <div className="card" onClick={() => router.push(`/${product.handle}`)}>
+  <div className="card-body">
+  <img src="/elden-ring.webp" alt="" />
+
+    <div className="row">
+
+      
+    <div className="product-desc">
+      <span className="product-title">
+      Elden Ring <b>Runes</b>
+
+              <span className="badge">
+                New
+              </span>
+      </span>
+      <span className="product-caption">
+      {product.description}
+            </span>
+   
+      
+    </div>
+
+      
+      
+    </div>
+    <hr className="hr"/>
+    
+    <div className="row">
+
+      <div className="card-title">
+        <h4>From</h4>
+      </div>
+      
+      <div className="btn-group">
+
+
+      <span className="product-price">
+      <div className="price-card price-card-new"><span>$</span> 1<span>.00</span></div>
+
+
+        </span>
+
+
+    </div>
+      
+    </div>
+  </div>
+
+
+  
+  </div>
           </Flex>
         </Card>
       </Layout>
