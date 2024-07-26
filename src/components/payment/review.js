@@ -12,44 +12,34 @@ const Review = ({ cart }) => {
         alignItems: "top",
       }}
     >
-      <Image
-        src={item.thumbnail}
-        alt={item.title}
+
+<Text
         sx={{
-          height: "90px",
-          width: "50%",
-          borderRadius: "4px",
-          objectFit: "contain",
-          objectPosition: "center center",
+          mt: "16px",
+          lineHeight: "24px",
+          fontSize: "14px",
+          fontWeight: 300,
+          color: "#6B7280",
         }}
-      />
-      <Flex
-        sx={{
-          flex: 1,
-          flexDirection: "column",
-          fontWeight: "500",
-          fontSize: ".8em",
-          paddingLeft: "20px",
-        }}
+        variant="fz_s"
       >
-        <Text sx={{ fontWeight: 550, marginBottom: "10px" }}>{item.title}</Text>
-        <Flex
-          sx={{
-            width: "100%",
-            fontWeight: 300,
-            justifyContent: "space-between",
-          }}
-        >
-          <Text sx={{ marginBottom: "15px" }}>
-            <Text sx={{ color: "#B0B0B0" }}>Platfotm: </Text>
-            {item.variant.title}
-          </Text>
-        </Flex>
-        <Text sx={{ fontWeight: 300 }}>
+    <div className="product-desc">
+      <span className="product-title">
+      {item.title} <b>{item.subtitle}</b>
+
+              
+      </span>
+      <span className="product-caption">
+      <Text sx={{ fontWeight: 300 }}>
           <Text sx={{ color: "#B0B0B0" }}>Quantity: </Text>
           {item.quantity}
-        </Text>
-      </Flex>
+        </Text>            </span>
+   
+      
+    </div>      </Text>
+      
+      
+     
     </Flex>
   )
 }
