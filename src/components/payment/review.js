@@ -28,12 +28,12 @@ const Review = ({ cart }) => {
       {item.title} <b>{item.subtitle}</b>
 
               
+      <span className="badge">
+      {item.quantity * item.metadata.plus}
+              </span>
+
       </span>
-      <span className="product-caption">
-      <Text sx={{ fontWeight: 300 }}>
-          <Text sx={{ color: "#B0B0B0" }}>Quantity: </Text>
-          {item.quantity}
-        </Text>            </span>
+  
    
       
     </div>      </Text>
