@@ -1,24 +1,11 @@
 import { Box, Flex, Select, Text } from "@theme-ui/components"
 import React, { useContext, useEffect, useMemo, useState } from "react"
 import ProductContext from "../../../context/product-context"
-import { formatVariantPrice } from "medusa-react"
 
-const OptionSelector = ({ product, region }) => {
+const OptionSelector = ({ product }) => {
   const { quantity, updateQuantity, selectVariant } = useContext(ProductContext)
   const [options, setOptions] = useState([])
   const [selection, setSelection] = useState(JSON.stringify({}))
-
-  let price = formatVariantPrice({
-    variant: product.variants[0] ,
-    region,
-  })
-
-  let cifra = "#"
-  if (price?.includes("R$")) { price = price.replace("R$","").replace(",",""), cifra="R$"}
-  if (price?.includes("$")) { price = price.replace("$","").replace(",",""), cifra="$"}
-  if (price?.includes("€")) { price = price.replace("€","").replace(",",""), cifra="€"}
-
-
 
   useEffect(() => {
     const opts = []
