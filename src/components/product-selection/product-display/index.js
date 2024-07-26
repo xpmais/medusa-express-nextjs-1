@@ -34,9 +34,21 @@ const ProductDisplay = ({ region, product }) => {
         }}
         variant="fz_s"
       >
-        {product.description}
-      </Text>
-      <OptionSelector product={product} />
+    <div className="product-desc">
+      <span className="product-title">
+      {product.title}
+
+              <span className="badge">
+                New
+              </span>
+      </span>
+      <span className="product-caption">
+      {product.description}
+            </span>
+   
+      
+    </div>      </Text>
+      <OptionSelector product={product} region={region}   />
     </Flex>
   ) : null
 }
