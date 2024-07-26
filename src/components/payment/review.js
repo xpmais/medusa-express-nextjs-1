@@ -1,7 +1,7 @@
 import { Flex, Image, Text } from "@theme-ui/components"
 import React, { useMemo } from "react"
 
-const Review = ({ cart }) => {
+const Review = ({ cart, product }) => {
   const item = useMemo(() => {
     return cart.items[0]
   }, [cart.items])
@@ -25,11 +25,11 @@ const Review = ({ cart }) => {
       >
     <div className="product-desc">
       <span className="product-title">
-      {item.title} <b>{item.subtitle}</b>
+      {product.title} <b>{product.subtitle}</b>
 
               
       <span className="badge">
-      {item.quantity * item.metadata.plus}
+      {item.quantity * product.metadata.plus}
               </span>
 
       </span>

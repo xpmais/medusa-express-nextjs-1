@@ -7,7 +7,7 @@ import Review from "../payment/review"
 import Total from "../payment/total"
 import Spinner from "../spinner/spinner"
 
-const DeliveryReview = ({ delivery, displayCountry }) => (
+const DeliveryReview = ({ delivery, displayCountry}) => (
   <Flex
     sx={{
       flexDirection: "column",
@@ -46,7 +46,7 @@ const Payment = ({ region, country, activeStep }) => {
         region.countries.find(c => c.iso_2 === country).display_name
       )
     }
-  }, [country, region, activeStep])
+  }, [country, region, activeStep, product])
 
   return (
     <Flex variant="layout.stepContainer">
@@ -78,7 +78,7 @@ const Payment = ({ region, country, activeStep }) => {
             )}
             <Text variant="header3">Payment</Text>
             <Box mt={"16px"}>
-              <Review cart={cart} /> <Total cart={cart} />
+              <Review cart={cart} product={product}  /> <Total cart={cart} />
               <Flex
                 sx={{
                   flexDirection: "column",
