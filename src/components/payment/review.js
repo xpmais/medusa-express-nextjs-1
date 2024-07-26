@@ -12,33 +12,44 @@ const Review = ({ cart }) => {
         alignItems: "top",
       }}
     >
-
-<Text
+      <Image
+        src={item.thumbnail}
+        alt={item.title}
         sx={{
-          mt: "16px",
-          lineHeight: "24px",
-          fontSize: "14px",
-          fontWeight: 300,
-          color: "#6B7280",
+          height: "90px",
+          width: "50%",
+          borderRadius: "4px",
+          objectFit: "contain",
+          objectPosition: "center center",
         }}
-        variant="fz_s"
+      />
+      <Flex
+        sx={{
+          flex: 1,
+          flexDirection: "column",
+          fontWeight: "500",
+          fontSize: ".8em",
+          paddingLeft: "20px",
+        }}
       >
-    <div className="product-desc">
-      <span className="product-title">
-      {item.title} <b>{item.subtitle}</b>
-
-              <span className="badge">
-                New
-              </span>
-      </span>
-      <span className="product-caption">
-      {item.description}
-            </span>
-   
-      
-    </div>      </Text>
-
-      
+        <Text sx={{ fontWeight: 550, marginBottom: "10px" }}>{item.title}</Text>
+        <Flex
+          sx={{
+            width: "100%",
+            fontWeight: 300,
+            justifyContent: "space-between",
+          }}
+        >
+          <Text sx={{ marginBottom: "15px" }}>
+            <Text sx={{ color: "#B0B0B0" }}>Platfotm: </Text>
+            {item.variant.title}
+          </Text>
+        </Flex>
+        <Text sx={{ fontWeight: 300 }}>
+          <Text sx={{ color: "#B0B0B0" }}>Quantity: </Text>
+          {item.quantity}
+        </Text>
+      </Flex>
     </Flex>
   )
 }
