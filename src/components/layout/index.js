@@ -10,7 +10,7 @@ const Layout = ({ children, regions, country, handleRegionChange }) => {
     >
       {children}
     </OuterLayout>
-  )
+  ) 
 }
 
 export default Layout
