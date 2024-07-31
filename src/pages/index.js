@@ -34,7 +34,7 @@ const IndexPage = ({ product }) => {
         <Card variant="container">
 
 
-
+ 
           <Flex sx={{ flexDirection: "column" }}>
             <Text
               sx={{
