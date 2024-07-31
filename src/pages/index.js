@@ -14,7 +14,7 @@ const IndexPage = ({ product }) => {
   const intercomID = 'zq6qqsdr'
           loadIntercom({
         
-        
+         
             appId: intercomID, // default : ''
             email: "", //default: ''
             name: "", //default: RandomName
